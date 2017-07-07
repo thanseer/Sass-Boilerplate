@@ -10,11 +10,109 @@
 
   &:after {
     display: table;
-    clear: both;
     content: "";
+    clear: both;
   }
 }
 
+// Content Center Align
+
+@mixin content-v-align{
+	position: absolute;
+	top: 50%;
+	transform:translateY(-50%);
+}
+
+// Div Center Align
+
+@mixin centerdiv{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%, -50%);
+	display: inline-block;
+}
+
+// BEM
+
+@mixin e($element) {
+	&__#{$element} {
+		@content;
+	}
+}
+
+@mixin m($modifier) {
+	&--#{$modifier} {
+		@content;
+	}
+}
+
+.list{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	@include e('item'){
+		margin-bottom: 10px;
+		@include m('last'){
+			margin-bottom: 0;
+		}
+	}
+}
+
+/*  --- CSS Output ---
+.list{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	&__item{
+		margin-bottom: 10px;
+		&--last{
+			margin-bottom: 0;
+		}
+	}
+} */
 
 
+// Link color
 
+@mixin link($link-color, $hover-color){
+	color:$link-color;
+	&:hover, &:active, &:focus{
+		color: $hover-color;
+	}
+}
+
+a{
+	@include link($red, $red-dark);
+}
+
+
+// Triangle Arrow
+
+@mixin triangle($width, $dir, $color){
+	@if $dir == type-of($value){
+		width:0;
+		height: 0;
+		border-top: $width solid transparent;
+		border-left: $width solid transparent;
+		border-right: $width solid $color;
+	} @else if $dir == right{
+		width:0;
+		height: 0;
+		border-top: $width solid transparent;
+		border-left: $width solid transparent;
+		border-left: $width solid $color;
+	} @else if $dir == right{
+		width:0;
+		height: 0;
+		border-top: $width solid transparent;
+		border-left: $width solid transparent;
+		border-left: $width solid $color;
+	} @else if $dir == right{
+		width:0;
+		height: 0;
+		border-top: $width solid transparent;
+		border-left: $width solid transparent;
+		border-left: $width solid $color;
+	}
+}
