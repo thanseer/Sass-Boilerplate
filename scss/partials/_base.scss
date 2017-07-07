@@ -130,6 +130,6 @@ a {
   height: 100%;
 }
 
-.arrwo{
-  @include triangle($width, $dir, red);
+.triangle{
+  @include triangle(100px, left, red);
 }
