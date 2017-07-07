@@ -1,0 +1,122 @@
+// Clearfix
+//
+// Clears floats via mixin (avoid using as a class).
+
+@mixin clearfix {
+  &:before {
+    display: table;
+    content: "";
+  }
+
+  &:after {
+    display: table;
+    content: "";
+    clear: both;
+  }
+}
+
+// Link color
+
+@mixin link($link-color, $hover-color){
+	color:$link-color;
+	&:hover, &:active, &:focus{
+		color: $hover-color;
+	}
+}
+
+// Button
+
+@mixin button ($bg-color, $color, $txt-cntr, $padd, $hover-color){
+    background: $bg-color;
+    color: $color;
+    text-align: $txt-cntr;
+    padding:$padd;
+    &:hover{
+    	background: $hover-color;
+    }
+}
+
+// Content Center Align
+
+@mixin content-v-align{
+	position: absolute;
+	top: 50%;
+	transform:translateY(-50%);
+}
+
+// Div Center Align
+
+@mixin centerdiv{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%, -50%);
+	display: inline-block;
+}
+
+// BEM
+
+@mixin e($element) {
+	&__#{$element} {
+		@content;
+	}
+}
+
+@mixin m($modifier) {
+	&--#{$modifier} {
+		@content;
+	}
+}
+
+/*  --- CSS Output ---
+.list{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	&__item{
+		margin-bottom: 10px;
+		&--last{
+			margin-bottom: 0;
+		}
+	}
+} */
+
+// Circle
+
+@mixin circle($width, $color, $radius){
+	width:$width;
+	height:$width;
+	background: $color;
+	border-radius: $radius;
+}
+
+// Triangle Arrow
+
+@mixin triangle($width, $dir, $color){
+	@if $dir == up{
+		width:0;
+		height: 0;
+		border-left: $width solid transparent;
+		border-right: $width solid $color;
+		border-bottom: $width solid $color;
+	} @else if $dir == down{
+		width:0;
+		height: 0;
+		border-top: $width solid $color;
+		border-left: $width solid transparent;
+		border-right: $width solid transparent;
+	} @else if $dir == left{
+		width:0;
+		height: 0;
+		border-top: $width solid transparent;
+		border-right: $width solid $color;
+		border-bottom: $width solid transparent;
+	} @else if $dir == right{
+		width:0;
+		height: 0;
+		border-top: $width solid transparent;
+		border-left: $width solid $color;
+		border-bottom: $width solid transparent;
+	}
+}
+
