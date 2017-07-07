@@ -81,7 +81,7 @@ a{
 }
 
 .button{
-  @include button($gray, $white, center, 6px 0, $gray-dark);
+  @include button($gray, $white, center, 6px 10px, $gray-dark);
 }
 
 *{
