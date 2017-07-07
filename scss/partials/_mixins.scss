@@ -15,6 +15,27 @@
   }
 }
 
+// Link color
+
+@mixin link($link-color, $hover-color){
+	color:$link-color;
+	&:hover, &:active, &:focus{
+		color: $hover-color;
+	}
+}
+
+// Button
+
+@mixin button ($bg-color, $color, $txt-cntr, $padd, $hover-color){
+    background: $bg-color;
+    color: $color;
+    text-align: $txt-cntr;
+    padding:$padd;
+    &:hover{
+    	background: $hover-color;
+    }
+}
+
 // Content Center Align
 
 @mixin content-v-align{
@@ -47,18 +68,6 @@
 	}
 }
 
-.list{
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	@include e('item'){
-		margin-bottom: 10px;
-		@include m('last'){
-			margin-bottom: 0;
-		}
-	}
-}
-
 /*  --- CSS Output ---
 .list{
 	list-style: none;
@@ -71,21 +80,6 @@
 		}
 	}
 } */
-
-
-// Link color
-
-@mixin link($link-color, $hover-color){
-	color:$link-color;
-	&:hover, &:active, &:focus{
-		color: $hover-color;
-	}
-}
-
-a{
-	@include link($red, $red-dark);
-}
-
 
 // Circle
 
@@ -125,3 +119,4 @@ a{
 		border-bottom: $width solid transparent;
 	}
 }
+
