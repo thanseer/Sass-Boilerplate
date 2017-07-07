@@ -87,6 +87,15 @@ a{
 }
 
 
+// Circle
+
+@mixin circle($width, $color, $radius){
+	width:$width;
+	height:$width;
+	background: $color;
+	border-radius: $radius;
+}
+
 // Triangle Arrow
 
 @mixin triangle($width, $dir, $color){

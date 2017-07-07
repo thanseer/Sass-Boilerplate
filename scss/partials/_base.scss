@@ -48,18 +48,6 @@ hr{
     }
 }
 
-.cf{
-  @include clearfix();
-}
-
-.cv-align{
-  @include content-v-align();
-}
-
-.centerdiv{
-  @include centerdiv();
-}
-
 iframe[name='google_conversion_frame'] { 
    height: 0 !important;
    width: 0 !important; 
@@ -130,6 +118,22 @@ a {
   height: 100%;
 }
 
+.cf{
+  @include clearfix();
+}
+
+.cv-align{
+  @include content-v-align();
+}
+
+.centerdiv{
+  @include centerdiv();
+}
+
+.circle{
+   @include circle(200px, $red, 50%);
+}
+
 .triangle{
-  @include triangle(100px, left, red);
+  @include triangle(100px, left, $red);
 }
