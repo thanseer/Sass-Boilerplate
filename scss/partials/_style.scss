@@ -2,7 +2,7 @@
 @media (#{$lg-1200}) {
   .nav{
     float: right;
-    font: 600 14px $muli;
+    font: 600 14px $open;
         text-transform: uppercase;padding-top: 35px;position: relative;z-index: 10;
     a{
    text-decoration: none;
@@ -27,7 +27,7 @@
    
         color: $blue;
          &:hover{
-          color: $orange;
+          color: $blue;
          }
           }
           >ul{
